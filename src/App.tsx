@@ -3,7 +3,7 @@ import {
   Headphones, 
   Settings, 
   Layout, 
-  Code, 
+ 
   Cpu, 
   Package, 
   UserCheck, 
