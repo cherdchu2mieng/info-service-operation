@@ -19,7 +19,7 @@ interface NodeProps {
 }
 
 const Node: React.FC<NodeProps> = ({ icon, title, desc, className }) => (
-  <div className={'node-card ' + className} id={'node-' + id}>
+  <div className={'node-card ' + className} id={'node-' + title}>
     <div className='node-icon'>{icon}</div>
     <div className='node-title'>{title}</div>
     <div className='node-desc'>{desc}</div>
