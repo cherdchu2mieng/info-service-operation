@@ -4,6 +4,7 @@
   --color-board-app: #059669;
   --color-board-tech: #0891b2;
   --color-board-fulfill: #7c3aed;
+  --color-staff-op: #0ea5e9;
   --color-staff: #dc2626;
   --color-kb: #db2777;
   --bg-light: #f8fafc;
@@ -11,26 +12,27 @@
   --text-main: #1e293b;
   --text-muted: #64748b;
 }
-body { margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-main); font-family: 'Inter', system-ui, sans-serif; overflow: hidden; }
-.infographic-container { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1rem; height: 100vh; width: 100vw; box-sizing: border-box; }
-.workflow-header { text-align: center; margin-bottom: 1.5rem; }
-.workflow-header h1 { font-size: 2rem; color: #1e293b; margin: 0; font-weight: 800; }
-.workflow-header p { color: var(--text-muted); font-size: 0.9rem; margin: 0.2rem 0 0 0; }
-.workflow-canvas { position: relative; display: flex; flex-direction: column; justify-content: space-between; width: 100%; max-width: 800px; height: 75vh; min-height: 500px; }
-.node-row { display: flex; justify-content: center; gap: 20px; position: relative; z-index: 2; }
-.node-card { background: var(--card-bg); border: 1.5px solid transparent; border-radius: 1rem; padding: 0.8rem; width: 150px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease; }
-.node-card:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
-.node-icon { background: #f1f5f9; padding: 0.6rem; border-radius: 50%; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; }
-.node-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.2rem; }
-.node-desc { font-size: 0.7rem; color: var(--text-muted); line-height: 1.2; }
+body { margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-main); font-family: 'Inter', sans-serif; overflow: hidden; }
+.infographic-container { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.5rem; height: 100vh; width: 100vw; box-sizing: border-box; }
+.workflow-header { text-align: center; margin-bottom: 0.8rem; }
+.workflow-header h1 { font-size: 1.6rem; color: #1e293b; margin: 0; font-weight: 800; }
+.workflow-header p { color: var(--text-muted); font-size: 0.8rem; margin: 0; }
+.workflow-canvas { position: relative; display: flex; flex-direction: column; justify-content: space-between; width: 100%; max-width: 800px; height: 85vh; }
+.node-row { display: flex; justify-content: center; gap: 15px; position: relative; z-index: 2; }
+.node-card { background: var(--card-bg); border: 1.5px solid transparent; border-radius: 0.8rem; padding: 0.5rem; width: 140px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: transform 0.2s; }
+.node-card:hover { transform: scale(1.02); }
+.node-icon { background: #f1f5f9; padding: 0.5rem; border-radius: 50%; margin-bottom: 0.3rem; display: flex; align-items: center; justify-content: center; }
+.node-title { font-weight: 700; font-size: 0.8rem; margin-bottom: 0.1rem; }
+.node-desc { font-size: 0.65rem; color: var(--text-muted); line-height: 1.1; }
 .svg-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
-.flow-path-animated { fill: none; stroke: #cbd5e1; stroke-width: 3; stroke-dasharray: 8, 8; animation: flow-animation 0.8s linear infinite; }
-@keyframes flow-animation { from { stroke-dashoffset: 16; } to { stroke-dashoffset: 0; } }
+.flow-path-animated { fill: none; stroke: #cbd5e1; stroke-width: 2.5; stroke-dasharray: 6, 6; animation: flow-animation 0.8s linear infinite; }
+@keyframes flow-animation { from { stroke-dashoffset: 12; } to { stroke-dashoffset: 0; } }
 .node-service-desk { border-color: var(--color-service-desk); } .node-service-desk .node-icon { color: var(--color-service-desk); }
 .node-ops-control { border-color: var(--color-ops-control); } .node-ops-control .node-icon { color: var(--color-ops-control); }
 .node-board-app { border-color: var(--color-board-app); } .node-board-app .node-icon { color: var(--color-board-app); }
 .node-board-tech { border-color: var(--color-board-tech); } .node-board-tech .node-icon { color: var(--color-board-tech); }
 .node-board-fulfill { border-color: var(--color-board-fulfill); } .node-board-fulfill .node-icon { color: var(--color-board-fulfill); }
+.node-staff-op { border-color: var(--color-staff-op); } .node-staff-op .node-icon { color: var(--color-staff-op); }
 .node-staff { border-color: var(--color-staff); } .node-staff .node-icon { color: var(--color-staff); }
 .node-kb { border-color: var(--color-kb); } .node-kb .node-icon { color: var(--color-kb); }
-.footer { margin-top: 1.5rem; color: var(--text-muted); font-size: 0.75rem; font-weight: 500; }
+.footer { margin-top: 0.5rem; color: var(--text-muted); font-size: 0.7rem; }

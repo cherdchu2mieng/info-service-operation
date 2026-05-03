@@ -5,6 +5,7 @@ import {
   Layout, 
   Cpu, 
   Package, 
+  Users,
   UserCheck, 
   LibraryBig
 } from 'lucide-react';
@@ -31,38 +32,42 @@ function App() {
     <div className='infographic-container'>
       <header className='workflow-header'>
         <h1>Service Workflow</h1>
-        <p>End-to-End Operation Flow</p>
+        <p>Service Desk to Knowledge Base Journey</p>
       </header>
 
       <div className='workflow-canvas'>
-        <svg className='svg-overlay' viewBox='0 0 1000 1000' preserveAspectRatio='none'>
-          <path d='M 500 50 L 500 150' className='flow-path-animated' />
-          <path d='M 500 250 L 500 320' className='flow-path-animated' />
-          <path d='M 500 320 L 250 320 L 250 420' className='flow-path-animated' />
-          <path d='M 500 320 L 500 420' className='flow-path-animated' />
-          <path d='M 500 320 L 750 320 L 750 420' className='flow-path-animated' />
-          <path d='M 250 580 L 250 650 L 500 650 L 500 750' className='flow-path-animated' />
-          <path d='M 500 580 L 500 750' className='flow-path-animated' />
-          <path d='M 750 580 L 750 650 L 500 650 L 500 750' className='flow-path-animated' />
-          <path d='M 500 850 L 500 950' className='flow-path-animated' />
+        <svg className='svg-overlay' viewBox='0 0 1000 1100' preserveAspectRatio='none'>
+          <path d='M 500 40 L 500 120' className='flow-path-animated' />
+          <path d='M 500 220 L 500 280' className='flow-path-animated' />
+          <path d='M 500 280 L 250 280 L 250 360' className='flow-path-animated' />
+          <path d='M 500 280 L 500 360' className='flow-path-animated' />
+          <path d='M 500 280 L 750 280 L 750 360' className='flow-path-animated' />
+          <path d='M 250 510 L 250 560 L 500 560 L 500 620' className='flow-path-animated' />
+          <path d='M 500 510 L 500 620' className='flow-path-animated' />
+          <path d='M 750 510 L 750 560 L 500 560 L 500 620' className='flow-path-animated' />
+          <path d='M 500 770 L 500 840' className='flow-path-animated' />
+          <path d='M 500 960 L 500 1030' className='flow-path-animated' />
         </svg>
 
         <div className='node-row'>
-          <Node id='sd' icon={<Headphones size={24} />} title='Service Desk' desc='รับเรื่องแจ้งปัญหา' className='node-service-desk' />
+          <Node id='sd' icon={<Headphones size={22} />} title='Service Desk' desc='รับเรื่องแจ้งปัญหา' className='node-service-desk' />
         </div>
         <div className='node-row'>
-          <Node id='oc' icon={<Settings size={24} />} title='Ops Control' desc='วิเคราะห์และคัดกรอง' className='node-ops-control' />
+          <Node id='oc' icon={<Settings size={22} />} title='Ops Control' desc='วิเคราะห์และจ่ายงาน' className='node-ops-control' />
         </div>
         <div className='node-row'>
-          <Node id='ba' icon={<Layout size={20} />} title='App' desc='งานซอฟต์แวร์' className='node-board-app' />
-          <Node id='bt' icon={<Cpu size={20} />} title='Tech' desc='งานโครงสร้างพื้นฐาน' className='node-board-tech' />
-          <Node id='bf' icon={<Package size={20} />} title='Fulfill' desc='งานจัดหาอุปกรณ์' className='node-board-fulfill' />
+          <Node id='ba' icon={<Layout size={18} />} title='Board: App' desc='สายงานซอฟต์แวร์' className='node-board-app' />
+          <Node id='bt' icon={<Cpu size={18} />} title='Board: Tech' desc='สายงานโครงสร้าง' className='node-board-tech' />
+          <Node id='bf' icon={<Package size={18} />} title='Board: Fulfill' desc='สายงานจัดหา' className='node-board-fulfill' />
         </div>
         <div className='node-row'>
-          <Node id='sc' icon={<UserCheck size={24} />} title='Staff' desc='ดำเนินการปิดจบงาน' className='node-staff' />
+          <Node id='staff-op' icon={<Users size={22} />} title='Staff Operation' desc='เจ้าหน้าที่ดำเนินงาน' className='node-staff-op' />
         </div>
         <div className='node-row'>
-          <Node id='kb' icon={<LibraryBig size={24} />} title='Knowledge' desc='บันทึกฐานความรู้' className='node-kb' />
+          <Node id='staff-cl' icon={<UserCheck size={22} />} title='Staff Closure' desc='เจ้าหน้าที่ปิดจบงาน' className='node-staff' />
+        </div>
+        <div className='node-row'>
+          <Node id='kb' icon={<LibraryBig size={22} />} title='Knowledge' desc='บันทึกฐานความรู้' className='node-kb' />
         </div>
       </div>
       <footer className='footer'>Created by Bird Oracle 🦜</footer>
