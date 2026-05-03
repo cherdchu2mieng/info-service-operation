@@ -1,0 +1,149 @@
+:root {
+  --color-service-desk: #3b82f6;
+  --color-ops-control: #f59e0b;
+  --color-board-app: #10b981;
+  --color-board-tech: #06b6d4;
+  --color-board-fulfill: #8b5cf6;
+  --color-staff: #ef4444;
+  --color-kb: #ec4899;
+  --bg-dark: #0f172a;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: white;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+.infographic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+}
+
+.workflow-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.workflow-header h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #3b82f6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.workflow-canvas {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.node-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.node-card {
+  background: rgba(30, 41, 59, 0.7);
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.node-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.node-icon {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.node-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.node-desc {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+/* Connection Lines */
+.svg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.flow-path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 3;
+  stroke-dasharray: 10, 10;
+  animation: dash-animation 20s linear infinite;
+}
+
+.flow-path-active {
+  stroke: var(--active-color, #3b82f6);
+  stroke-width: 4;
+  opacity: 0.6;
+}
+
+@keyframes dash-animation {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Node Specific Colors */
+.node-service-desk { border-color: var(--color-service-desk); }
+.node-ops-control { border-color: var(--color-ops-control); }
+.node-board-app { border-color: var(--color-board-app); }
+.node-board-tech { border-color: var(--color-board-tech); }
+.node-board-fulfill { border-color: var(--color-board-fulfill); }
+.node-staff { border-color: var(--color-staff); }
+.node-kb { border-color: var(--color-kb); }
+
+.node-service-desk .node-icon { color: var(--color-service-desk); }
+.node-ops-control .node-icon { color: var(--color-ops-control); }
+.node-staff .node-icon { color: var(--color-staff); }
+.node-kb .node-icon { color: var(--color-kb); }
+
+/* Staff Closure Glow */
+.node-staff:hover {
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+}
